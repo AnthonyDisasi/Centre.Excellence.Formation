@@ -24,6 +24,22 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             ViewBag.Fournitures = Fournitures;
         }
 
+        public IActionResult CreateFourniture(string nom)
+        {
+            Fourniture model = new Fourniture { Nom = nom };
+            db.Fournitures.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Create");
+        }
+
+        public IActionResult newLocalisation(string nom)
+        {
+            Localisation model = new Localisation { Nom = nom };
+            db.Localisations.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Create");
+        }
+
         private void LLocal()
         {
             List<SelectListItem> Localisation = (from l in db.Localisations orderby l.Nom ascending select new SelectListItem() { Text = l.Nom, Value = l.Nom }).ToList();
