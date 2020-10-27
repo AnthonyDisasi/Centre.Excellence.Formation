@@ -36,5 +36,12 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             var model = from m in db.Materiels select m;
             return View(await model.AsNoTracking().ToListAsync());
         }
+
+        public IActionResult Create()
+        {
+            LFourniture();
+            LLocal();
+            return View();
+        }
     }
 }
