@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CentreFormation.Areas.Inventaire.Data;
+using CentreFormation.Areas.Inventaire.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -39,6 +40,20 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 
         public IActionResult Create()
         {
+            LFourniture();
+            LLocal();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Materiel model)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Materiels.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Materiel");
+            }
             LFourniture();
             LLocal();
             return View();
