@@ -1,0 +1,130 @@
+﻿@model Materiel
+
+
+<form asp-area="Inventaire" asp-controller="Materiel" asp-action="Create" asp-route-id="@Model.ID" method="post">
+    <table>
+        <tr>
+            <td>
+                <label asp-for="Description"></label>
+            </td>
+            <td>
+                <select asp-for="Description" asp-items="@ViewBag.Fournitures">
+                    <option value="">Selectionner</option>
+                </select>
+                <span asp-validation-for="Description" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Quantite"></label>
+            </td>
+            <td>
+                <input asp-for="Quantite" placeholder="Saisissez un nombre!" />
+                <span asp-validation-for="Quantite" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Marque"></label>
+            </td>
+            <td>
+                <input asp-for="Marque" />
+                <span asp-validation-for="Marque" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Carecteristique"></label>
+            </td>
+            <td>
+                <input asp-for="Carecteristique" />
+                <span asp-validation-for="Carecteristique" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="NumeroSerie"></label>
+            </td>
+            <td>
+                <input asp-for="NumeroSerie" />
+                <span asp-validation-for="NumeroSerie" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="TAG"></label>
+            </td>
+            <td>
+                <input asp-for="TAG" />
+                <span asp-validation-for="TAG" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="AutreNumero"></label>
+            </td>
+            <td>
+                <input asp-for="AutreNumero" />
+                <span asp-validation-for="AutreNumero" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Localisation"></label>
+            </td>
+            <td>
+                <select asp-for="Localisation" asp-items="@ViewBag.Localisations">
+                    <option value="">Selectionner</option>
+                </select>
+                <span asp-validation-for="Localisation" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Fournisseur"></label>
+            </td>
+            <td>
+                <input asp-for="Fournisseur" />
+                <span asp-validation-for="Fournisseur" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="SourceFinancement"></label>
+            </td>
+            <td>
+                <input asp-for="SourceFinancement" />
+                <span asp-validation-for="SourceFinancement" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="AnneeAcquisition"></label>
+            </td>
+            <td>
+                <input asp-for="AnneeAcquisition" />
+                <span asp-validation-for="AnneeAcquisition" class="message"></span>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <label asp-for="Commentaire"></label>
+            </td>
+            <td>
+                <textarea asp-for="Commentaire"></textarea>
+                <span asp-validation-for="Commentaire" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Enregistrer" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br />
+
+<a asp-area="Inventaire" asp-controller="Materiel" asp-action="Index">Retour à la liste des materiel</a>
