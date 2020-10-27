@@ -86,6 +86,21 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             LLocal();
             return View(model);
         }
+        
+        [HttpPost]
+        public IActionResult Update(string id, Materiel model)
+        {
+            model.ID = id;
+            if (ModelState.IsValid)
+            {
+                db.Materiels.Update(model);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            LFourniture();
+            LLocal();
+            return View(model);
+        }
 
     }
 }
