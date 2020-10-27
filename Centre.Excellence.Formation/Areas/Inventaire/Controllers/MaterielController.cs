@@ -50,7 +50,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             {
                 db.Materiels.Add(model);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Materiel");
+                return RedirectToAction("Index");
             }
             LFourniture();
             LLocal();

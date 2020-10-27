@@ -7,7 +7,7 @@
                 <label asp-for="Description"></label>
             </td>
             <td>
-                <select asp-for="Description" asp-items="@ViewBag.LFourniture">
+                <select asp-for="Description" asp-items="@ViewBag.Fournitures">
                     <option value="">Selectionner</option>
                 </select>
                 <span asp-validation-for="Description" class="message"></span>
@@ -72,7 +72,7 @@
                 <label asp-for="Localisation"></label>
             </td>
             <td>
-                <select asp-for="Localisation" asp-items="@ViewBag.LLocal">
+                <select asp-for="Localisation" asp-items="@ViewBag.Localisations">
                     <option value="">Selectionner</option>
                 </select>
                 <span asp-validation-for="Localisation" class="message"></span>
@@ -114,6 +114,11 @@
             <td>
                 <textarea asp-for="Commentaire"></textarea>
                 <span asp-validation-for="Commentaire" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Enregistrer" />
             </td>
         </tr>
     </table>
