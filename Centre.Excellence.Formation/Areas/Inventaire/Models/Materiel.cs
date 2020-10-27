@@ -14,7 +14,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Models
         [Display(Name = "Description des Fourniture"), Required(ErrorMessage = "La description est obligatoire")]
         public string Description { get; set; }
         [Display(Name = "Quantité"), Required(ErrorMessage = "La quantité est obligatoire")]
-        public int Quatite { get; set; }
+        public int Quantite { get; set; }
         [Required(ErrorMessage = "La marque est obligatoire")]
         public string Marque { get; set; }
         [Display(Name = "Carecteristique"), Required(ErrorMessage = "Le carecteristique est obligatoire")]
