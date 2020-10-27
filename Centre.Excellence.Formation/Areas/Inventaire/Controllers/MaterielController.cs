@@ -12,9 +12,9 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
     public class MaterielController : Controller
     {
         private readonly DCInventaire db;
-        public MaterielController()
+        public MaterielController(DCInventaire _db)
         {
-            db = 
+            db = _db;
         }
         public IActionResult Index()
         {
