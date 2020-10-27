@@ -6,6 +6,7 @@ using CentreFormation.Areas.Inventaire.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 {
@@ -30,9 +31,10 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             ViewBag.Localisations = Localisation;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            return View();
+            var model = from m in db.Materiels select m;
+            return View(await model.AsNoTracking().ToListAsync());
         }
     }
 }
