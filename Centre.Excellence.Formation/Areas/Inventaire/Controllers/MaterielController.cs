@@ -72,5 +72,13 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             LLocal();
             return View();
         }
+
+        public IActionResult Detail(string id)
+        {
+            Materiel model = db.Materiels.Find(id);
+            LFourniture();
+            LLocal();
+            return View(model);
+        }
     }
 }

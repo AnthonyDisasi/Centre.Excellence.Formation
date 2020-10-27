@@ -12,6 +12,7 @@
             <th>@Html.DisplayNameFor(m => m.Fournisseur)</th>
             <th>@Html.DisplayNameFor(m => m.SourceFinancement)</th>
             <th>@Html.DisplayNameFor(m => m.AnneeAcquisition)</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -38,6 +39,9 @@
             </td>
             <td>
                 @Html.DisplayFor(m => item.AnneeAcquisition)
+            </td>
+            <td>
+                <a asp-area="Inventaire" asp-controller="Materiel" asp-action="Detail" asp-route-id="@item.ID">Detail</a>
             </td>
         </tr>
         }
