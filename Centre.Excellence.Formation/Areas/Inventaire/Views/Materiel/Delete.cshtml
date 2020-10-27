@@ -105,20 +105,7 @@
             @Html.DisplayFor(m => Model.Commentaire)
         </td>
     </tr>
-    <tr>
-        <td>@Html.DisplayNameFor(m => Model.Diagnostiques)</td>
-        <td>
-            <p>Nombre des diagnostiques : @Model.Diagnostiques.Count()</p>
-            <table>
-                <tr>
-                    <th>Description</th>
-                    <th>Quantite</th>
-                    <th>Etat</th>
-                    <th>Besoin</th>
-                    <th>Date du diagnostique</th>
-                </tr>
-                
-            </table>
-        </td>
-    </tr>
 </table>
+<form asp-area="Inventaire" asp-controller="Materiel" asp-action="Delete" asp-route-id="@Model.ID" method="get">
+    <input type="submit" value="Supprimer" />
+</form>
