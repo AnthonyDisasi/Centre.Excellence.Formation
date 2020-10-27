@@ -102,5 +102,11 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public IActionResult Supprimer(string id)
+        {
+            Materiel model = db.Materiels.Find(id);
+            return View(model);
+        }
     }
 }
