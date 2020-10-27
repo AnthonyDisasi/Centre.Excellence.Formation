@@ -46,7 +46,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             ViewBag.Localisations = Localisation;
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index()
         {
             var model = from m in db.Materiels select m;
             return View(await model.AsNoTracking().ToListAsync());
