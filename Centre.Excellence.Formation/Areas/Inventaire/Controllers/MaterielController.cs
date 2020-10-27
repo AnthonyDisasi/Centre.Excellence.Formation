@@ -75,7 +75,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 
         public IActionResult Detail(string id)
         {
-            Materiel model = db.Materiels.Find(id);
+            Materiel model = db.Materiels.Include(d => d.Diagnostiques).AsNoTracking().FirstOrDefault(m => m.ID == id);
             LFourniture();
             LLocal();
             return View(model);
