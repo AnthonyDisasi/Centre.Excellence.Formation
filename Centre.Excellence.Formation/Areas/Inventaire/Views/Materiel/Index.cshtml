@@ -1,1 +1,45 @@
-﻿Disasi tu es le meilleur
+﻿@model IEnumerable<Materiel>
+
+<a asp-area="Inventaire" asp-controller="Materiel" asp-action="Create">Ajouter un nouveau materiel</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Description)</th>
+            <th>@Html.DisplayNameFor(m => m.Quantite)</th>
+            <th>@Html.DisplayNameFor(m => m.Marque)</th>
+            <th>@Html.DisplayNameFor(m => m.Localisation)</th>
+            <th>@Html.DisplayNameFor(m => m.Fournisseur)</th>
+            <th>@Html.DisplayNameFor(m => m.SourceFinancement)</th>
+            <th>@Html.DisplayNameFor(m => m.AnneeAcquisition)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Quantite)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Marque)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Localisation)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Fournisseur)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.SourceFinancement)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.AnneeAcquisition)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

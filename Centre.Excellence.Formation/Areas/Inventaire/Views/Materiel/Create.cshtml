@@ -1,5 +1,14 @@
 ﻿@model Materiel
 
+
+<form asp-area="Inventaire" asp-controller="Materiel" asp-action="CreateFourniture" method="get">
+    <p>Ajouter un nouveau fourniture</p>
+    <input type="text" name="nom" />
+    <input type="submit" value="Ajouter" />
+</form>
+
+<br />
+
 <form asp-area="Inventaire" asp-controller="Materiel" asp-action="Create" method="post">
     <table>
         <tr>
@@ -18,7 +27,7 @@
                 <label asp-for="Quantite"></label>
             </td>
             <td>
-                <input asp-for="Quantite" />
+                <input asp-for="Quantite" placeholder="Saisissez un nombre!" />
                 <span asp-validation-for="Quantite" class="message"></span>
             </td>
         </tr>
