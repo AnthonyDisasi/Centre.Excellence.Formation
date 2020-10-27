@@ -24,6 +24,12 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             ViewBag.Fournitures = Fournitures;
         }
 
+        private void LLocal()
+        {
+            List<SelectListItem> Localisation = (from l in db.Localisations orderby l.Nom ascending select new SelectListItem() { Text = l.Nom, Value = l.Nom }).ToList();
+            ViewBag.Localisations = Localisation;
+        }
+
         public IActionResult Index()
         {
             return View();
