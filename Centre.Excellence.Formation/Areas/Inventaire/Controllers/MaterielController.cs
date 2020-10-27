@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CentreFormation.Areas.Inventaire.Data;
-using CentreFormation.Areas.Inventaire.Models;
+using Centre.Excellence.Formation.Areas.Inventaire.Data;
+using Centre.Excellence.Formation.Areas.Inventaire.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 

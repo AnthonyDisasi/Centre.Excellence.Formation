@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CentreFormation.Areas.Inventaire.Models
+namespace Centre.Excellence.Formation.Areas.Inventaire.Models
 {
     public class Fourniture
     {

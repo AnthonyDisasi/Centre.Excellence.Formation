@@ -1,4 +1,4 @@
-﻿namespace CentreFormation.Areas.Inventaire.Models
+﻿namespace Centre.Excellence.Formation.Areas.Inventaire.Models
 {
     public enum Etat
     {

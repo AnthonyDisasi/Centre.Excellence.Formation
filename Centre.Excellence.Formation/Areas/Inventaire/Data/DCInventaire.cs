@@ -1,7 +1,7 @@
-﻿using CentreFormation.Areas.Inventaire.Models;
+﻿using Centre.Excellence.Formation.Areas.Inventaire.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CentreFormation.Areas.Inventaire.Data
+namespace Centre.Excellence.Formation.Areas.Inventaire.Data
 {
     public class DCInventaire : DbContext
     {
