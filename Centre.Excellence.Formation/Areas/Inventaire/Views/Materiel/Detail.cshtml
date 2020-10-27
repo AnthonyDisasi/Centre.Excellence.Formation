@@ -1,0 +1,124 @@
+﻿@model Materiel
+
+<table>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.ID)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Description)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Quantite)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Quantite)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Marque)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Marque)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Carecteristique)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Carecteristique)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.NumeroSerie)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.NumeroSerie)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.TAG)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.TAG)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.AutreNumero)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.AutreNumero)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Localisation)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Localisation)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Fournisseur)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Fournisseur)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.SourceFinancement)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.SourceFinancement)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.AnneeAcquisition)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.AnneeAcquisition)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Commentaire)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Commentaire)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => Model.Diagnostiques)</td>
+        <td>
+            <p>Nombre des diagnostiques : @Model.Diagnostiques.Count()</p>
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantite</th>
+                    <th>Etat</th>
+                    <th>Besoin</th>
+                    <th>Date du diagnostique</th>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
