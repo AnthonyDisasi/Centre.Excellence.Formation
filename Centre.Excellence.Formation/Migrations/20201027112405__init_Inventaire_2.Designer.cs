@@ -4,14 +4,16 @@ using Centre.Excellence.Formation.Areas.Inventaire.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Centre.Excellence.Formation.Migrations
 {
     [DbContext(typeof(DCInventaire))]
-    partial class DCInventaireModelSnapshot : ModelSnapshot
+    [Migration("20201027112405__init_Inventaire_2")]
+    partial class _init_Inventaire_2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
