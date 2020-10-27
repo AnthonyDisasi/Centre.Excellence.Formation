@@ -108,5 +108,14 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Materiel model = db.Materiels.Find(id);
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult Delete(string id)
+        {
+            Materiel model = db.Materiels.Find(id);
+            db.Materiels.Remove(model);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
