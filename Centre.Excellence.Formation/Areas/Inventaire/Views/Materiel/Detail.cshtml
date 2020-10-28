@@ -105,6 +105,7 @@
             @Html.DisplayFor(m => Model.Commentaire)
         </td>
     </tr>
+
     <tr>
         <td>@Html.DisplayNameFor(m => Model.Diagnostiques)</td>
         <td>
@@ -117,7 +118,26 @@
                     <th>Besoin</th>
                     <th>Date du diagnostique</th>
                 </tr>
-                
+                @foreach (Diagnostique item in Model.Diagnostiques)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(d => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(d => item.Quantite)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(d => item.Etat)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(d => item.Besoin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(d => item.DateDiagnostique)
+                        </td>
+                    </tr>
+                }
             </table>
         </td>
     </tr>
