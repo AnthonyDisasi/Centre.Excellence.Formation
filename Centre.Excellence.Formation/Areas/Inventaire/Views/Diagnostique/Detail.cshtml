@@ -1,0 +1,173 @@
+﻿@model Diagnostique
+
+<table>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(d => Model.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(d => Model.ID)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(d => Model.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(d => Model.Description)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(d => Model.Quantite)
+        </td>
+        <td>
+            @Html.DisplayFor(d => Model.Quantite)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(d => Model.Etat)
+        </td>
+        <td>
+            @Html.DisplayFor(d => Model.Etat)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(d => Model.Besoin)
+        </td>
+        <td>
+            @Html.DisplayFor(d => Model.Besoin)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(d => Model.DateDiagnostique)
+        </td>
+        <td>
+            @Html.DisplayFor(d => Model.DateDiagnostique)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(m => Model.Materiel)
+        </td>
+        <td>
+            <table>
+
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.ID)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.Description)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.Quantite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.Quantite)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.Marque)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.Marque)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.Carecteristique)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.Carecteristique)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.NumeroSerie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.NumeroSerie)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.TAG)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.TAG)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.AutreNumero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.AutreNumero)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.Localisation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.Localisation)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.Fournisseur)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.Fournisseur)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.SourceFinancement)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.SourceFinancement)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.AnneeAcquisition)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.AnneeAcquisition)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(m => Model.Materiel.Commentaire)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.Materiel.Commentaire)
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<a asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Update" asp-route-id="@Model.ID">Modifier</a>
+<a asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Delete" asp-route-id="@Model.ID">Supprimer</a>
+
+<br />
+
+<a asp-area="Inventaire" asp-controller="Materiel" asp-action="Detail" asp-route-id="@Model.MaterielID">Retour au materiel</a>
