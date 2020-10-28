@@ -1,0 +1,21 @@
+﻿@model Diagnostique
+
+
+<form asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Create" asp-route-idmat="@ViewBag.IDMateriel" method="post">
+    <table>
+        <tr>
+            <td>
+                <label asp-for="Description"></label>
+            </td>
+            <td>
+                <input asp-for="Description" />
+                <span asp-validation-for="Description" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Quantite"></label>
+            </td>
+        </tr>
+    </table>
+</form>
