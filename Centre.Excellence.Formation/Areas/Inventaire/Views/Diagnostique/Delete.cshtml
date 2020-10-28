@@ -1,0 +1,57 @@
+﻿@model Diagnostique
+
+<table>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.ID)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Description)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Quantite)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Quantite)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Etat)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Etat)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Besoin)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Besoin)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.DateDiagnostique)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.DateDiagnostique)
+        </td>
+    </tr>
+</table>
+<form asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Delete" asp-route-id="@Model.ID" method="post">
+    <input type="submit" value="Supprimer" />
+</form>
+
+<a asp-area="Inventaire" asp-controller="Materiel" asp-action="Detail" asp-route-id="@Model.MaterielID">Retour au materiel</a>
