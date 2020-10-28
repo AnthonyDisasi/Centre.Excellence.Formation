@@ -1,7 +1,6 @@
 ﻿@model Diagnostique
 
-<h5>Description du materiel : @Model.Materiel.Description</h5>
-<h5>Marque du materiel : @Model.Materiel.Marque</h5>
+<h5>Description du materiel : @Model.MaterielID</h5>
 
 <form asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Update" asp-route-idmat="@Model.MaterielID" asp-route-id="@Model.ID" method="post">
     <table>
