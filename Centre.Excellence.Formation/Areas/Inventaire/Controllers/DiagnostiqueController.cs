@@ -63,5 +63,15 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             model.Materiel = db.Materiels.Find(idmat);
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public IActionResult Delete(string id)
+        {
+            var model = db.Diagnostiques.Include(m => m.Materiel).AsNoTracking().FirstOrDefault(d => d.ID == id);
+            return View(model);
+        }
+
+        [HttpPost]
+        
     }
 }
