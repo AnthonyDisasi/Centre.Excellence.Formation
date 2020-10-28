@@ -100,5 +100,18 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             ViewBag.Mat = new SelectList(db.Materiels, "ID", "Description");
             return View();
         }
+
+        [HttpPost]
+        public IActionResult NewDiag(Diagnostique model)
+        {
+            if(ModelState.IsValid)
+            {
+                db.Diagnostiques.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Detail", "Materiel", new { id = model.MaterielID });
+            }
+            ViewBag.Mat = new SelectList(db.Materiels, "ID", "Description");
+            return View(model);
+        }
     }
 }
