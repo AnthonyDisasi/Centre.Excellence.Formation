@@ -28,11 +28,34 @@
                 <label asp-for="Etat"></label>
             </td>
             <td>
-                <select asp-for="Etat" asp-items="Etat">
-                    <option value="">Selectionner</option>
-                </select>
+                <input asp-for="Etat" />
                 <span asp-validation-for="Etat"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Besoin"></label>
+            </td>
+            <td>
+                <input asp-for="Besoin" />
+                <span asp-validation-for="Besoin"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="DateDiagnostique"></label>
+            </td>
+            <td>
+                <input asp-for="DateDiagnostique" />
+                <span asp-validation-for="DateDiagnostique"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Enregistrer" />
             </td>
         </tr>
     </table>
 </form>
+
+<a asp-area="Inventaire" asp-controller="Materiel" asp-action="Detail" asp-route-id="@ViewBag.IDMateriel">Retour au materiel</a>
