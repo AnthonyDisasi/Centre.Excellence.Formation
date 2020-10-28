@@ -67,7 +67,11 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         [ActionName("Delete")]
         public IActionResult Supprimer(string id)
         {
-            var model = db.Diagnostiques.Include(m => m.Materiel).AsNoTracking().FirstOrDefault(d => d.ID == id);
+            var model = db
+                .Diagnostiques
+                .Include(m => m.Materiel)
+                .AsNoTracking()
+                .FirstOrDefault(d => d.ID == id);
             return View(model);
         }
 
@@ -78,6 +82,16 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             db.Diagnostiques.Remove(model);
             db.SaveChanges();
             return RedirectToAction("Detail", "Materiel", new { id = model.MaterielID });
+        }
+
+        public IActionResult Detail(string id)
+        {
+            var model = db
+                .Diagnostiques
+                .Include(m => m.Materiel)
+                .AsNoTracking()
+                .FirstOrDefault(d => d.ID == id);
+            return View(model);
         }
     }
 }
