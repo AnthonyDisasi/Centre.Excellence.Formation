@@ -41,5 +41,11 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             ViewBag.Marq = marque;
             return View(model);
         }
+
+        public IActionResult Update(string id)
+        {
+            Diagnostique model = db.Diagnostiques.Find(id);
+            return View(model);
+        }
     }
 }
