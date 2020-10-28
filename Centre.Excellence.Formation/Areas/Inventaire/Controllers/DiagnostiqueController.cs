@@ -26,13 +26,19 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Diagnostique model, string idmat)
+        public IActionResult Create(Diagnostique model, string idmat, string description, string marque)
         {
             model.MaterielID = idmat;
             if(ModelState.IsValid)
             {
-                
+                db.Diagnostiques.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Detail", "Materiel", new { id = idmat });
             }
+            ViewBag.IDMateriel = idmat;
+            ViewBag.Desc = description;
+            ViewBag.Marq = marque;
+            return View(model);
         }
     }
 }

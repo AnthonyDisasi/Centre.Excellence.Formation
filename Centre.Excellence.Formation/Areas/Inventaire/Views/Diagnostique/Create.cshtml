@@ -3,7 +3,7 @@
 <h5>Description du materiel : @ViewBag.Desc</h5>
 <h5>Marque du materiel : @ViewBag.Marq</h5>
 
-<form asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Create" asp-route-idmat="@ViewBag.IDMateriel" method="post">
+<form asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Create" asp-route-idmat="@ViewBag.IDMateriel" asp-route-description="@ViewBag.Desc" asp-route-marque="@ViewBag.Marq" method="post">
     <table>
         <tr>
             <td>
