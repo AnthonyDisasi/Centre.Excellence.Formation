@@ -1,5 +1,7 @@
 ﻿@model Diagnostique
 
+<h5>Description du materiel : @ViewBag.Desc</h5>
+<h5>Marque du materiel : @ViewBag.Marq</h5>
 
 <form asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Create" asp-route-idmat="@ViewBag.IDMateriel" method="post">
     <table>
@@ -15,6 +17,21 @@
         <tr>
             <td>
                 <label asp-for="Quantite"></label>
+            </td>
+            <td>
+                <input asp-for="Quantite" placeholder="Saisissez un nombre!" />
+                <span asp-validation-for="Quantite" class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Etat"></label>
+            </td>
+            <td>
+                <select asp-for="Etat" asp-items="Etat">
+                    <option value="">Selectionner</option>
+                </select>
+                <span asp-validation-for="Etat"></span>
             </td>
         </tr>
     </table>
