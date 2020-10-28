@@ -47,5 +47,19 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Diagnostique model = db.Diagnostiques.Find(id);
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult Update(Diagnostique model, string id, string idmat)
+        {
+            model.ID = id;
+            model.MaterielID = idmat;
+            if (ModelState.IsValid)
+            {
+                db.Diagnostiques.Update(model);
+                db.SaveChanges();
+                return RedirectToAction("Detail", "Materiel", new { id = idmat });
+            }
+            return View(model);
+        }
     }
 }
