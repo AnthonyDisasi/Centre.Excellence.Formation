@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Centre.Excellence.Formation.Areas.Inventaire.Data;
 using Centre.Excellence.Formation.Areas.Inventaire.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 {
@@ -44,7 +45,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 
         public IActionResult Update(string id)
         {
-            Diagnostique model = db.Diagnostiques.Find(id);
+            var model = db.Diagnostiques.Include(m => m.Materiel).AsNoTracking().FirstOrDefault(d => d.ID == id);
             return View(model);
         }
 
@@ -59,6 +60,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Detail", "Materiel", new { id = idmat });
             }
+            model.Materiel = db.Materiels.Find(idmat);
             return View(model);
         }
     }
