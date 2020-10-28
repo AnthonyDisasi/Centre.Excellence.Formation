@@ -108,6 +108,7 @@
 
     <tr>
         <td>@Html.DisplayNameFor(m => Model.Diagnostiques)</td>
+        <a asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Create" asp-route-idmat="@Model.ID">Ajouter un diagnostique</a>
         <td>
             <p>Nombre des diagnostiques : @Model.Diagnostiques.Count()</p>
             <table>
@@ -117,6 +118,7 @@
                     <th>Etat</th>
                     <th>Besoin</th>
                     <th>Date du diagnostique</th>
+                    <th>Actions</th>
                 </tr>
                 @foreach (Diagnostique item in Model.Diagnostiques)
                 {
@@ -136,9 +138,17 @@
                         <td>
                             @Html.DisplayFor(d => item.DateDiagnostique)
                         </td>
+                        <td>
+                            <a asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Detail" asp-route-id="@item.ID">Detail</a>
+                            <a asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Update" asp-route-id="@item.ID">Modifier</a>
+                            <a asp-area="Inventaire" asp-controller="Diagnostique" asp-action="Delete" asp-route-id="@item.ID">Supprimer</a>
+                        </td>
                     </tr>
                 }
             </table>
         </td>
     </tr>
 </table>
+
+<a asp-area="Inventaire" asp-controller="Materiel" asp-action="Update" asp-route-id="@Model.ID">Modifier</a>
+<a asp-area="Inventaire" asp-controller="Materiel" asp-action="Delete" asp-route-id="@Model.ID">Supprimer</a>
