@@ -110,9 +110,9 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(string idmat)
         {
-            Materiel model = db.Materiels.Find(id);
+            Materiel model = db.Materiels.Find(idmat);
             db.Materiels.Remove(model);
             db.SaveChanges();
             return RedirectToAction("Index");
