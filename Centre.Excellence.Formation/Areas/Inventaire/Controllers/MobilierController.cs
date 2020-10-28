@@ -9,9 +9,9 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
     [Area("Inventaire")]
     public class MobilierController : Controller
     {
-        public IActionResult Index()
+        public string Index()
         {
-            return View();
+            return "Salut";
         }
     }
 }
