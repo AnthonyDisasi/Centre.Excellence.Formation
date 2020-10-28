@@ -8,8 +8,9 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 {
     public class DiagnostiqueController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Create(string idmat)
         {
+            ViewBag.IDMateriel = idmat;
             return View();
         }
     }
