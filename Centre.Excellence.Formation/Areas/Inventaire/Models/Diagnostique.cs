@@ -16,7 +16,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Models
         public string Description { get; set; }
         [Display(Name = "Quantité"), Required(ErrorMessage = "La quantité est obligatoire")]
         public int Quantite { get; set; }
-        [Display(Name = "Etat"), Required(ErrorMessage = "L'état est obligatoire"), EnumDataType(typeof(Etat))]
+        [Display(Name = "Etat"), Required(ErrorMessage = "L'état est obligatoire")]
         public string Etat { get; set; }
         [Display(Name = "Besoin du materiel"), Required(ErrorMessage = "Le besoin est obligatoire")]
         public string Besoin { get; set; }
