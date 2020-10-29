@@ -1,53 +1,61 @@
 ﻿@model Mobilier
 
-<form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" method="post">
-    <table>
-        <tr>
-            <td>
-                <label asp-for="Description"></label>
-            </td>
-            <td>
-                <input asp-for="Description" />
-                <span asp-validation-for="Description" class="message"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label asp-for="Quantite"></label>
-            </td>
-            <td>
-                <input asp-for="Quantite" />
-                <span asp-validation-for="Quantite" class="mesaage"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label asp-for="Localisation"></label>
-            </td>
-            <td>
-                <select asp-for="Localisation" asp-items="@ViewBag.Localisations">
-                    <option value="">Selectionner</option>
-                </select>
-                <span asp-validation-for="Localisation" class="message"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label asp-for="Etat"></label>
-            </td>
-            <td>
-                <select asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
-                    <option value="">Selectionner</option>
-                </select>
-                <span asp-validation-for="Etat" class="message"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" value="Enregistrer" />
-            </td>
-        </tr>
-    </table>
-</form>
+    <form asp-area="Inventaire" asp-controller="Materiel" asp-action="newLocalisation" method="get">
+        <p>Ajouter un nouveau fourniture</p>
+        <input type="text" name="nom" placeholder="Le nom du local" />
+        <input type="submit" value="Ajouter" />
+    </form>
 
-<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Index">Retour à la liste des mobiliers</a>
+    <br />
+
+    <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label asp-for="Description"></label>
+                </td>
+                <td>
+                    <input asp-for="Description" />
+                    <span asp-validation-for="Description" class="message"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Quantite"></label>
+                </td>
+                <td>
+                    <input asp-for="Quantite" />
+                    <span asp-validation-for="Quantite" class="mesaage"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Localisation"></label>
+                </td>
+                <td>
+                    <select asp-for="Localisation" asp-items="@ViewBag.Localisations">
+                        <option value="">Selectionner</option>
+                    </select>
+                    <span asp-validation-for="Localisation" class="message"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Etat"></label>
+                </td>
+                <td>
+                    <select asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
+                        <option value="">Selectionner</option>
+                    </select>
+                    <span asp-validation-for="Etat" class="message"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Enregistrer" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Index">Retour à la liste des mobiliers</a>
