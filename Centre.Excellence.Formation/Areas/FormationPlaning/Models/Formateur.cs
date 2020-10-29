@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Centre.Excellence.Formation.Areas.FormationPlaning
+namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
 {
     public class Formateur
     {
