@@ -84,5 +84,14 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Mobilier model = db.Mobiliers.Find(id);
             return View(model);
         }
+
+        [HttpPost]
+        public IActionResult Delete(string idmob)
+        {
+            Mobilier model = db.Mobiliers.Find(idmob);
+            db.Mobiliers.Remove(model);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
