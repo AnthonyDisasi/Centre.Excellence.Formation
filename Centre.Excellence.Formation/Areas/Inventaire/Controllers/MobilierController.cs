@@ -26,6 +26,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 
         public IActionResult Create()
         {
+            LLocal();
             return View();
         }
 
