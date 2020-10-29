@@ -22,7 +22,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Localisation model = new Localisation { Nom = nom };
             db.Localisations.Add(model);
             db.SaveChanges();
-            return RedirectToAction("Create");
+            return RedirectToAction("Index");
         }
 
         public IActionResult CreateFourniture(string nom)
@@ -30,12 +30,12 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Fourniture model = new Fourniture { Nom = nom };
             db.Fournitures.Add(model);
             db.SaveChanges();
-            return RedirectToAction("Create");
+            return RedirectToAction("Index");
         }
 
-        public IActionResult Index()
+        public string Index()
         {
-            return View();
+            return "Salut";
         }
     }
 }
