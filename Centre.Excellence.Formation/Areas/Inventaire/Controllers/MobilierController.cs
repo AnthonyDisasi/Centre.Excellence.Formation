@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Centre.Excellence.Formation.Areas.Inventaire.Data;
+using Centre.Excellence.Formation.Areas.Inventaire.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -28,6 +29,19 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         {
             LLocal();
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Mobilier model)
+        {
+            if(ModelState.IsValid)
+            {
+                db.Mobiliers.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            LLocal();
+            return View(model);
         }
 
         public string Index()
