@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 {
+    [Area("Inventaire")]
     public class Local_FournitureController : Controller
     {
         public IActionResult Index()
