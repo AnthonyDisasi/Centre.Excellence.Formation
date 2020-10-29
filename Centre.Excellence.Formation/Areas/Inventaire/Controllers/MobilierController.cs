@@ -77,5 +77,12 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             LLocal();
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public IActionResult Supprimer(string id)
+        {
+            Mobilier model = db.Mobiliers.Find(id);
+            return View(model);
+        }
     }
 }
