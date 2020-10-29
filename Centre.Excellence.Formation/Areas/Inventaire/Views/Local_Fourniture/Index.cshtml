@@ -19,11 +19,10 @@
     {
         <tr>
             <td>
-                <label>Nom du local : </label>
-                <textarea>@item.Nom</textarea>
-            </td>
-            <td>
-                <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateLocal" asp-route-id="@item.ID">Modifier</a>
+                <form asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateLocals" asp-route-id="@item.ID">
+                    <textarea name="nom">@item.Nom</textarea>
+                    <input type="submit" value="Modifier" />
+                </form>
                 <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="DeleteLocal" asp-route-id="@item.ID">Supprimer</a>
             </td>
         </tr>

@@ -58,5 +58,10 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Liste();
             return RedirectToAction("Index");
         }
+
+        public string UpdateLocals(string id, string nom)
+        {
+            return nom;
+        }
     }
 }
