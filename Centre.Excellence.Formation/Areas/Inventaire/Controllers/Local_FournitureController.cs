@@ -23,7 +23,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         private void Liste()
         {
             ViewBag.Localisations = db.Localisations.AsNoTracking().ToList();
-            ViewBag.Fournitures = db.Localisations.AsNoTracking().ToList();
+            ViewBag.Fournitures = db.Fournitures.AsNoTracking().ToList();
         }
 
         public IActionResult newLocalisation(string nom)

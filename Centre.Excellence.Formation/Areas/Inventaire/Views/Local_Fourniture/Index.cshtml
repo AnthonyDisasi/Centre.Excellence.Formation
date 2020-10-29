@@ -1,30 +1,47 @@
 ﻿<form asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="CreateFourniture" method="get">
-    <p>Ajouter un nouveau fourniture</p>
-    <input type="text" name="nom" placeholder="Le nom du fourniture" />
+    <p>Ajouter une nouvelle fourniture</p>
+    <textarea name="nom" placeholder="Le nom de la fourniture"></textarea>
     <input type="submit" value="Ajouter" />
 </form>
 
 <br />
 
 <form asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="newLocalisation" method="get">
-    <p>Ajouter un nouveau fourniture</p>
-    <input type="text" name="nom" placeholder="Le nom du local" />
+   <p>Ajouter un nouveau local</p>
+    <textarea name="nom" placeholder="Le nom du local"></textarea>
     <input type="submit" value="Ajouter" />
 </form>
 
 <br />
 
 <table>
-    @foreach(Localisation item in ViewBag.Localisations)
+    @foreach (Localisation item in ViewBag.Localisations)
     {
         <tr>
             <td>
                 <label>Nom du local : </label>
-                <input type="text" value="@item.Nom" />
+                <textarea>@item.Nom</textarea>
             </td>
             <td>
                 <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateLocal" asp-route-id="@item.ID">Modifier</a>
                 <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="DeleteLocal" asp-route-id="@item.ID">Supprimer</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+
+<table>
+    @foreach (Fourniture item in ViewBag.Fournitures)
+    {
+        <tr>
+            <td>
+                <label>Nom de la fourniture : </label>
+                <textarea>@item.Nom</textarea>
+            </td>
+            <td>
+                <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateFournit" asp-route-id="@item.ID">Modifier</a>
+                <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="DeleteFournit" asp-route-id="@item.ID">Supprimer</a>
             </td>
         </tr>
     }
