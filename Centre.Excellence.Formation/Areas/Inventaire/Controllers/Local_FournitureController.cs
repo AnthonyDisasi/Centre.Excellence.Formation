@@ -59,5 +59,14 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Liste();
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteLocal(string id)
+        {
+            Localisation model = db.Localisations.Find(id);
+            db.Localisations.Remove(model);
+            db.SaveChanges();
+            Liste();
+            return RedirectToAction("Index");
+        }
     }
 }
