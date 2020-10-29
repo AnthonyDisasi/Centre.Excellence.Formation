@@ -49,5 +49,14 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Liste();
             return View();
         }
+
+        public IActionResult UpdateLocal(string id, string nom)
+        {
+            Localisation model = new Localisation { ID = id, Nom = nom };
+            db.Localisations.Update(model);
+            db.SaveChanges();
+            Liste();
+            return RedirectToAction("Index");
+        }
     }
 }
