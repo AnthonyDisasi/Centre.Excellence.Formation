@@ -56,5 +56,11 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Mobilier model = db.Mobiliers.Find(id);
             return View(model);
         }
+
+        public IActionResult Update(string id)
+        {
+            Mobilier model = db.Mobiliers.Find(id);
+            return View(model);
+        }
     }
 }
