@@ -60,6 +60,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         public IActionResult Update(string id)
         {
             Mobilier model = db.Mobiliers.Find(id);
+            LLocal();
             return View(model);
         }
 
@@ -73,6 +74,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            LLocal();
             return View(model);
         }
     }
