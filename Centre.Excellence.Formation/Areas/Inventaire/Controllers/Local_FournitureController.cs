@@ -68,5 +68,8 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Liste();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult 
     }
 }

@@ -34,15 +34,15 @@
 <table>
     @foreach (Fourniture item in ViewBag.Fournitures)
     {
-        <tr>
-            <td>
-                <label>Nom de la fourniture : </label>
-                <textarea>@item.Nom</textarea>
-            </td>
-            <td>
-                <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateFournit" asp-route-id="@item.ID">Modifier</a>
-                <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="DeleteFournit" asp-route-id="@item.ID">Supprimer</a>
-            </td>
-        </tr>
+    <tr>
+        <td>
+            <form asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateFournit" method="get">
+                <input type="text" name="id" value="@item.ID" style="display:none;" />
+                <textarea name="nom">@item.Nom</textarea>
+                <input type="submit" value="Modifier" />
+            </form>
+            <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="DeleteFournit" asp-route-id="@item.ID">Supprimer</a>
+        </td>
+    </tr>
     }
 </table>
