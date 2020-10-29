@@ -13,5 +13,14 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string ID { get; set; }
 
+        public string FormarteurID { get; set; }
+
+        [Display(Name = "Intituler"), Required(ErrorMessage = "L'intituler est obligatoire")]
+        public string Intituler { get; set; }
+
+        [Display(Name = "Volume"), Required(ErrorMessage = "Le volume est obligatoire")]
+        public string Volume { get; set; }
+
+        public Formateur Formateur { get; set; }
     }
 }
