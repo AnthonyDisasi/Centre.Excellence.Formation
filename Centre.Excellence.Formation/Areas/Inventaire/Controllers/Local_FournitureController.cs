@@ -68,8 +68,16 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             Liste();
             return RedirectToAction("Index");
         }
+        // DeleteFournit
 
         [HttpGet]
-        public IActionResult 
+        public IActionResult UpdateFournit(string id, string nom)
+        {
+            Fourniture model = new Fourniture { ID = id, Nom = nom };
+            db.Fournitures.Update(model);
+            db.SaveChanges();
+            Liste();
+            return RedirectToAction("Index");
+        }
     }
 }
