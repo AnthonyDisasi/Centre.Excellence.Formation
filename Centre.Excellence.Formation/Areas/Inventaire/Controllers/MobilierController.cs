@@ -93,5 +93,13 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult newLocalisation(string nom)
+        {
+            Localisation model = new Localisation { Nom = nom };
+            db.Localisations.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Create");
+        }
     }
 }
