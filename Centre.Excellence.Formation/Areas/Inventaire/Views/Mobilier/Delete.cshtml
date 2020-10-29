@@ -1,0 +1,52 @@
+﻿@model Mobilier
+
+<table>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.ID)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Description)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Quantite)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Quantite)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Localisation)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Localisation)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(m => Model.Etat)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model.Etat)
+        </td>
+    </tr>
+</table>
+<form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Delete" asp-route-idmob="@Model.ID" method="post">
+    <input type="submit" value="Supprimer" />
+</form>
+
+
+<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@Model.ID">Modifier</a>
+<br />
+<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Index">Retour à la liste des mobiliers</a>
