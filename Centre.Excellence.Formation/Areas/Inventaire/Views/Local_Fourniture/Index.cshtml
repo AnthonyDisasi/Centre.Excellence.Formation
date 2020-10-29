@@ -19,7 +19,8 @@
     {
         <tr>
             <td>
-                <form asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateLocals" asp-route-id="@item.ID">
+                <form asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateLocal" method="get">
+                    <input type="text" name="id" value="@item.ID" style="display:none;" />
                     <textarea name="nom">@item.Nom</textarea>
                     <input type="submit" value="Modifier" />
                 </form>

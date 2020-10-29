@@ -50,6 +50,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult UpdateLocal(string id, string nom)
         {
             Localisation model = new Localisation { ID = id, Nom = nom };
@@ -57,11 +58,6 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             db.SaveChanges();
             Liste();
             return RedirectToAction("Index");
-        }
-
-        public string UpdateLocals(string id, string nom)
-        {
-            return nom;
         }
     }
 }
