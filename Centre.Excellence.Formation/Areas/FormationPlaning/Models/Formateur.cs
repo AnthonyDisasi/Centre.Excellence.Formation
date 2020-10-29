@@ -48,5 +48,6 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
         }
 
         public ICollection<Modules> Modules { get; set; }
+        public ICollection<Former> Formers { get; set; }
     }
 }
