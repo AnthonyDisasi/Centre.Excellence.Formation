@@ -15,7 +15,6 @@
   <ItemGroup>
     <Folder Include="Areas\Inventaire\Data\" />
     <Folder Include="Areas\Inventaire\Models\" />
-    <Folder Include="Areas\Inventaire\Views\Local_Fourniture\" />
   </ItemGroup>
 
 </Project>
