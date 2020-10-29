@@ -1,4 +1,4 @@
-﻿<form asp-area="Inventaire" asp-controller="Materiel" asp-action="CreateFourniture" method="get">
+﻿<form asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="CreateFourniture" method="get">
     <p>Ajouter un nouveau fourniture</p>
     <input type="text" name="nom" placeholder="Le nom du fourniture" />
     <input type="submit" value="Ajouter" />
@@ -6,7 +6,7 @@
 
 <br />
 
-<form asp-area="Inventaire" asp-controller="Materiel" asp-action="newLocalisation" method="get">
+<form asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="newLocalisation" method="get">
     <p>Ajouter un nouveau fourniture</p>
     <input type="text" name="nom" placeholder="Le nom du local" />
     <input type="submit" value="Ajouter" />
@@ -14,3 +14,18 @@
 
 <br />
 
+<table>
+    @foreach(Localisation item in ViewBag.Localisations)
+    {
+        <tr>
+            <td>
+                <label>Nom du local : </label>
+                <input type="text" value="@item.Nom" />
+            </td>
+            <td>
+                <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="UpdateLocal" asp-route-id="@item.ID">Modifier</a>
+                <a asp-area="Inventaire" asp-controller="Local_Fourniture" asp-action="DeleteLocal" asp-route-id="@item.ID">Supprimer</a>
+            </td>
+        </tr>
+    }
+</table>
