@@ -14,9 +14,9 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
         public string ID { get; set; }
 
         public string FormateurID { get; set; }
-        public string FormationID { get; set; }
+        public string FormationsID { get; set; }
 
         public Formateur Formateur { get; set; }
-        public Formation Formation { get; set; }
+        public Formations Formation { get; set; }
     }
 }

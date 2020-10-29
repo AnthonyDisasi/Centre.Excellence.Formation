@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
 {
-    public class Formation
+    public class Formations
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -53,7 +53,7 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
                 int i = 0;
                 foreach (Participant item in Participants)
                 {
-                    if (item.Genre == 1)
+                    if (item.Genre != 0)
                     {
                         i++;
                     }

@@ -21,8 +21,8 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
         [Display(Name = "Prenom"), Required(ErrorMessage = "Le prenom est obligatoire")]
         public string Prenom { get; set; }
 
-        [Required, EnumDataType(typeof(Enumeration))]
-        public Enumeration Genre { get; set; }
+        [Required, EnumDataType(typeof(Genre))]
+        public Genre Genre { get; set; }
 
         [Display(Name = "Niveau d'étude"), Required(ErrorMessage = "Le niveau d'étude est obligatoire")]
         public string NiveauEtude { get; set; }

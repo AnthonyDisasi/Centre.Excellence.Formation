@@ -13,6 +13,8 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string ID { get; set; }
 
+        public string FormationsID { get; set; }
+
         [Display(Name = "Nom"), Required(ErrorMessage = "Le nom est obligatoire")]
         public string Nom { get; set; }
         [Display(Name = "Postnom"), Required(ErrorMessage = "Le postnom est obligatoire")]
@@ -20,8 +22,8 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
         [Display(Name = "Prenom"), Required(ErrorMessage = "Le prenom est obligatoire")]
         public string Prenom { get; set; }
 
-        [Required, EnumDataType(typeof(Enumeration))]
-        public Enumeration Genre { get; set; }
+        [Required, EnumDataType(typeof(Genre))]
+        public Genre Genre { get; set; }
 
         public string NomComplet
         {
@@ -30,5 +32,7 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
                 return Nom + " " + Postnom + " " + Prenom;
             }
         }
+
+        public Formations Formations { get; set; }
     }
 }
