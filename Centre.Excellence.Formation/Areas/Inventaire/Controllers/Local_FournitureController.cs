@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Centre.Excellence.Formation.Areas.Inventaire.Data;
+using Centre.Excellence.Formation.Areas.Inventaire.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
@@ -16,6 +17,14 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         {
             db = _db;
         }
+        public IActionResult newLocalisation(string nom)
+        {
+            Localisation model = new Localisation { Nom = nom };
+            db.Localisations.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Create");
+        }
+
         public IActionResult Index()
         {
             return View();
