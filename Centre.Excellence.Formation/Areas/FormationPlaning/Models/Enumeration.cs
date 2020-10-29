@@ -9,4 +9,9 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
     {
         Homme, Femme
     }
+
+    public enum Mois
+    {
+        Janvier, Fevrier, Mars, Avril, Mais, Juin, Jullet, Aout, Septembre, Octobre, Nombre, Decembre
+    }
 }
