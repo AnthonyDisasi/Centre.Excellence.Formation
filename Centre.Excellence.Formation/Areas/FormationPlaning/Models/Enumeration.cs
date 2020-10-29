@@ -12,6 +12,6 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
 
     public enum Mois
     {
-        Janvier, Fevrier, Mars, Avril, Mais, Juin, Jullet, Aout, Septembre, Octobre, Nombre, Decembre
+        Janvier, Fevrier, Mars, Avril, Mais, Juin, Jullet, Aout, Septembre, Octobre, Nombre, Decembre   
     }
 }
