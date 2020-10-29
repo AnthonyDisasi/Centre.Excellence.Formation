@@ -6,6 +6,7 @@ using Centre.Excellence.Formation.Areas.Inventaire.Data;
 using Centre.Excellence.Formation.Areas.Inventaire.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 {
@@ -44,9 +45,10 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             return View(model);
         }
 
-        public string Index()
+        public IActionResult Index()
         {
-            return "Salut";
+            var model = db.Mobiliers.AsNoTracking().ToList();
+            return View(model);
         }
     }
 }
