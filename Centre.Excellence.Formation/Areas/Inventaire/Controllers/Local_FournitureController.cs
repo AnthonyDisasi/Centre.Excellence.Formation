@@ -6,6 +6,7 @@ using Centre.Excellence.Formation.Areas.Inventaire.Data;
 using Centre.Excellence.Formation.Areas.Inventaire.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 {
@@ -21,8 +22,8 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 
         private void Liste()
         {
-            ViewBag.Localisations = new SelectList(db.Localisations, "ID", "Nom");
-            ViewBag.Fournitures = new SelectList(db.Fournitures, "ID", "Nom");
+            ViewBag.Localisations = db.Localisations.AsNoTracking().ToList();
+            ViewBag.Fournitures = db.Localisations.AsNoTracking().ToList();
         }
 
         public IActionResult newLocalisation(string nom)
