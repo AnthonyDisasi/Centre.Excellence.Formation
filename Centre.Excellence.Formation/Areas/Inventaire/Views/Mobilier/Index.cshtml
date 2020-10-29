@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Mobilier>
+
+<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create">Ajouter un nouveau mobilier</a>
+
+<table>
+    <tr>
+        <th>Description du mobilier</th>
+        <th>Quantité</th>
+        <th>Localisation</th>
+        <th>Etat</th>
+        <th>Actions</th>
+    </tr>
+    @foreach(Mobilier item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Quantite)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Localisation)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Etat)
+            </td>
+            <td>
+                <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Detail" asp-route-id="@item.ID">Detail</a>
+                <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@item.ID">Modifier</a>
+                <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="DElete" asp-route-id="@item.ID">Supprimer</a>
+            </td>
+        </tr>
+    }
+</table>
