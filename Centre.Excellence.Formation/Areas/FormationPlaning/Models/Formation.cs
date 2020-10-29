@@ -61,10 +61,15 @@ namespace Centre.Excellence.Formation.Areas.FormationPlaning.Models
                 return i;
             }
         }
+
         [Display(Name = "Coût de la formation"), Required(ErrorMessage = "Le coût de la formation est obligatoire")]
         public double CoutFormation { get; set; }
         [Required(ErrorMessage = "L'observation est obligatoire")]
         public string Observation { get; set; }
+
+
+        [Display(Name = "L'année la formation"), Required(ErrorMessage = "L'année la formation est obligatoire")]
+        public string Annee { get; set; }
 
         public ICollection<Former> Formers { get; set; }
         public ICollection<Participant> Participants { get; set; }
