@@ -25,6 +25,14 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             return RedirectToAction("Create");
         }
 
+        public IActionResult CreateFourniture(string nom)
+        {
+            Fourniture model = new Fourniture { Nom = nom };
+            db.Fournitures.Add(model);
+            db.SaveChanges();
+            return RedirectToAction("Create");
+        }
+
         public IActionResult Index()
         {
             return View();
