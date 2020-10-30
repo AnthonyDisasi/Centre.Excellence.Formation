@@ -2,8 +2,8 @@
 
 <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create">Ajouter un nouveau mobilier</a>
 
-<table class="table table-bordered">
-    <thead class="thead-dark">
+<table class="table table-striped">
+    <thead class="thead-light">
         <tr>
             <th>Description du mobilier</th>
             <th>Quantité</th>
@@ -16,9 +16,9 @@
         @foreach (Mobilier item in Model)
         {
             <tr>
-                <td>
+                <th>
                     @Html.DisplayFor(m => item.Description)
-                </td>
+                </th>
                 <td>
                     @Html.DisplayFor(m => item.Quantite)
                 </td>
@@ -29,9 +29,11 @@
                     @Html.DisplayFor(m => item.Etat)
                 </td>
                 <td>
-                    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Detail" asp-route-id="@item.ID">Detail</a>
-                    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@item.ID">Modifier</a>
-                    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="DElete" asp-route-id="@item.ID">Supprimer</a>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Detail" asp-route-id="@item.ID" class="btn btn-info">Detail</a>
+                        <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@item.ID" class="btn btn-danger">Modifier</a>
+                        <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-light">Supprimer</a>
+                    </div>
                 </td>
             </tr>
         }
