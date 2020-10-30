@@ -1,41 +1,46 @@
 ﻿@model IEnumerable<Mobilier>
 
-<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create">Ajouter un nouveau mobilier</a>
+    <h3>Tableau des mobiliers</h3>
+    <br />
+    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" class="btn btn-outline-primary">Nouveau mobilier</a>
+    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" class="btn btn-outline-dark">Rapport des mobiliers</a>
+    <br /><br />
 
-<table class="table table-striped">
-    <thead class="thead-light">
-        <tr>
-            <th>Description du mobilier</th>
-            <th>Quantité</th>
-            <th>Localisation</th>
-            <th>Etat</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Mobilier item in Model)
-        {
+
+    <table class="table table-striped table-sm" style=" margin-right: 10px;">
+        <thead class="thead-light">
             <tr>
-                <th>
-                    @Html.DisplayFor(m => item.Description)
-                </th>
-                <td>
-                    @Html.DisplayFor(m => item.Quantite)
-                </td>
-                <td>
-                    @Html.DisplayFor(m => item.Localisation)
-                </td>
-                <td>
-                    @Html.DisplayFor(m => item.Etat)
-                </td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Detail" asp-route-id="@item.ID" class="btn btn-info">Detail</a>
-                        <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@item.ID" class="btn btn-danger">Modifier</a>
-                        <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-light">Supprimer</a>
-                    </div>
-                </td>
+                <th>Description du mobilier</th>
+                <th>Quantité</th>
+                <th>Localisation</th>
+                <th>Etat</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (Mobilier item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(m => item.Description)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(m => item.Quantite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.Localisation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.Etat)
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Detail" asp-route-id="@item.ID" class="btn btn-info">Detail</a>
+                            <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@item.ID" class="btn btn-danger">Modifier</a>
+                            <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-light">Supprimer</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
