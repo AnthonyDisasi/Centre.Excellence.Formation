@@ -1,123 +1,56 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
+    a.navbar-brand {
+      white-space: normal;
+      text-align: center;
+      word-break: break-all;
+    }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
+    /* Sticky footer styles
+    -------------------------------------------------- */
+    html {
+      font-size: 14px;
+    }
+    @media (min-width: 768px) {
+      html {
+        font-size: 16px;
+      }
+    }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
+    .border-top {
+      border-top: 1px solid #e5e5e5;
+    }
+    .border-bottom {
+      border-bottom: 1px solid #e5e5e5;
+    }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+    .box-shadow {
+      box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
+    button.accept-policy {
+      font-size: 1rem;
+      line-height: inherit;
+    }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
+    /* Sticky footer styles
+    -------------------------------------------------- */
+    html {
+      position: relative;
+      min-height: 100%;
+    }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-}
-
-.get_in_touch {
-    max-width: 800px;
-    margin: 50px auto;
-    position: relative;
-    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-}
-
-    .get_in_touch .title {
-        text-transform: uppercase;
-        text-align: center;
-        letter-spacing: 3px;
-        font-size: 3em;
-        line-height: 48px;
-        padding-bottom: 20px;
-        color: #5543ca;
-        background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      white-space: nowrap;
+      /* Set the fixed height of the footer here */
+      height: 60px;
+      line-height: 60px; /* Vertically center the text there */
     }
-
-.contact-form .form-field {
-    position: relative;
-    margin: 32px 0px;
-}
-
-.contact-form .input-text {
-    display: block;
-    width: 100%;
-    height: 36px;
-    border-width: 0 0 2px 0;
-    border-color: #5543ca;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-}
-
-    .contact-form .input-text:focus {
-        outline: none;
-    }
-
-.contact-form .label {
-    position: absolute;
-    left: 20px;
-    bottom: 11px;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #5543ca;
-    cursor: text;
-    text-transform: capitalize;
-    transition: transform 0.2s ease-in-out;
-}
-
-.contact-form .submit-btn {
-    display: inline-block;
-    background-image: linear-gradient(125deg, #a72879, #064497);
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 16px;
-    padding: 8px 16px;
-    border: none;
-    width: 200px;
-    cursor: pointer;
-}
