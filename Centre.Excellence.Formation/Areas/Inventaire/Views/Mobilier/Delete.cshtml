@@ -1,52 +1,35 @@
 ﻿@model Mobilier
 
-<table>
-    <tr>
-        <td>
-            @Html.DisplayNameFor(m => Model.ID)
-        </td>
-        <td>
-            @Html.DisplayFor(m => Model.ID)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.DisplayNameFor(m => Model.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(m => Model.Description)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.DisplayNameFor(m => Model.Quantite)
-        </td>
-        <td>
-            @Html.DisplayFor(m => Model.Quantite)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.DisplayNameFor(m => Model.Localisation)
-        </td>
-        <td>
-            @Html.DisplayFor(m => Model.Localisation)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.DisplayNameFor(m => Model.Etat)
-        </td>
-        <td>
-            @Html.DisplayFor(m => Model.Etat)
-        </td>
-    </tr>
-</table>
-<form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Delete" asp-route-idmob="@Model.ID" method="post">
-    <input type="submit" value="Supprimer" />
-</form>
-
-
-<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@Model.ID">Modifier</a>
 <br />
-<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Index">Retour à la liste des mobiliers</a>
+<h4 class="text-danger">Etes vous sûr de supprimer ce mobilier!</h4>
+<br />
+<div class="btn-group" role="group" aria-label="Basic example">
+    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@Model.ID" class="btn btn-outline-info">Modifier</a>
+    <a asp-area="Inventaire" asp-controller="Mobilier" class="btn btn-outline-primary" asp-action="Index">Retour aux mobiliers</a>
+</div>
+<br />
+<br />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.ID)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(m => Model.ID)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.Description)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(m => Model.Description)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.Quantite)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(m => Model.Quantite)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.Localisation)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(m => Model.Localisation)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.Etat)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(m => Model.Etat)</dd>
+
+    <dt class="col-sm-9">
+        <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Delete"  asp-route-idmob="@Model.ID" method="post">
+            <input type="submit" class="btn btn-danger" value="Supprimer" />
+        </form>
+    </dt>
+</dl>
+
+

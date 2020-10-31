@@ -1,61 +1,44 @@
 ﻿@model Mobilier
 
-    <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="newLocalisation" method="get">
-        <p>Ajouter un nouveau fourniture</p>
-        <input type="text" name="nom" placeholder="Le nom du local" />
-        <input type="submit" value="Ajouter" />
-    </form>
+    <div style="m">
+        <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="newLocalisation" method="get">
+            <p>Ajouter un nouveau fourniture</p>
+            <input type="text" name="nom" placeholder="Le nom du local" />
+            <input type="submit" value="Ajouter" />
+        </form>
+        <a asp-area="Inventaire" asp-controller="Mobilier" class="btn btn-outline-primary" asp-action="Index">Retour aux mobiliers</a>
+        <br />
 
-    <br />
+        <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" method="post">
+            <div class="form-group" style="width:925px;">
+                <label asp-for="Description"></label>
+                <input type="text" class="form-control" asp-for="Description" placeholder="La description du mobilier">
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
 
-    <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" method="post">
-        <table>
-            <tr>
-                <td>
-                    <label asp-for="Description"></label>
-                </td>
-                <td>
-                    <input asp-for="Description" />
-                    <span asp-validation-for="Description" class="message"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label asp-for="Quantite"></label>
-                </td>
-                <td>
-                    <input asp-for="Quantite" />
-                    <span asp-validation-for="Quantite" class="mesaage"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label asp-for="Localisation"></label>
-                </td>
-                <td>
-                    <select asp-for="Localisation" asp-items="@ViewBag.Localisations">
-                        <option value="">Selectionner</option>
-                    </select>
-                    <span asp-validation-for="Localisation" class="message"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
+            <div class="form-row">
+                <div class="form-group col-md-4">
                     <label asp-for="Etat"></label>
-                </td>
-                <td>
-                    <select asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
-                        <option value="">Selectionner</option>
+                    <select class="form-control" asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
+                        <option value="">Selectionner...</option>
                     </select>
-                    <span asp-validation-for="Etat" class="message"></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" value="Enregistrer" />
-                </td>
-            </tr>
-        </table>
-    </form>
+                    <span asp-validation-for="Etat" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Localisation"></label>
+                    <select class="form-control" asp-for="Localisation" asp-items="@ViewBag.Localisations">
+                        <option value="">Selectionner...</option>
+                    </select>
+                    <span asp-validation-for="Localisation" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="Quantite"></label>
+                    <input type="text" class="form-control" asp-for="Quantite">
+                    <span asp-validation-for="Quantite" class="text-danger"></span>
+                </div>
+            </div>
 
-    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Index">Retour à la liste des mobiliers</a>
+            <button type="submit" class="btn btn-primary text-center">Enregistrer</button>
+        </form>
+
+    </div>

@@ -3,11 +3,11 @@
     <h3>Tableau des mobiliers</h3>
     <br />
     <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" class="btn btn-outline-primary">Nouveau mobilier</a>
-    <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" class="btn btn-outline-dark">Rapport des mobiliers</a>
+    <a asp-area="Inventaire" asp-controller="Mobilier" onclick="imprimer('tableau')" asp-action="Create" class="btn btn-outline-dark">Rapport des mobiliers</a>
     <br /><br />
 
 
-    <table class="table table-striped table-sm" style=" margin-right: 10px;">
+    <table class="table table-striped table-sm" style=" margin-right: 10px;" id="tableau">
         <thead class="thead-light">
             <tr>
                 <th>Description du mobilier</th>
