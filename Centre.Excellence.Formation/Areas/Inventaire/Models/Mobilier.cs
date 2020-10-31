@@ -15,7 +15,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Models
         public int Quantite { get; set; }
         [Required(ErrorMessage = "La localisation du mobilier")]
         public string Localisation { get; set; }
-        [Required, EnumDataType(typeof(Etat))]
+        [Required(ErrorMessage = "L'état du mobilier"), EnumDataType(typeof(Etat))]
         public Etat Etat { get; set; }
     }
 }
