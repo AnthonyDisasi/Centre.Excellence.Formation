@@ -1,14 +1,7 @@
 ﻿@model IEnumerable<Mobilier>
 <h3>Tableau des mobiliers</h3>
-<br />
-<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" class="btn btn-outline-primary">Nouveau mobilier</a>
-<a onclick="imprimer('tableau')">Imprimer</a>
-<br />
-<br />
-
 
 <table class="table table-striped table-sm" style=" margin-right: 10px;" id="tableau">
-    <caption>Rapport des mobiliers du centre d'excellence</caption>
     <thead class="thead-light">
         <tr>
             <th>Description du mobilier</th>
@@ -38,12 +31,9 @@
     </tbody>
 </table>
 
+
 <script>
-    function imprimer(divName) {
-        var printContent = document.getElementById(divName).innerHTML;
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML = printContent;
-        window.print();
-        document.body.innerHTML = originalContents
-    }
+    document.getElementById("cache").style.visibility = "hidden";
+    document.getElementById("cache").style.display = "none"; 
+    window.print();
 </script>
