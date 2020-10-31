@@ -1,73 +1,56 @@
 ﻿@model Mobilier
 
-
-    <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="newLocalisation" method="get">
-        <p>Ajouter un nouveau fourniture</p>
-        <input type="text" name="nom" placeholder="Le nom du local" />
-        <input type="submit" value="Ajouter" />
-    </form>
-    <a asp-area="Inventaire" asp-controller="Mobilier" class="btn btn-outline-primary" asp-action="Index">Retour aux mobiliers</a>
-    <br />
-
-    <section class="get_in_touch">
+<section class="get_in_touch">
+    <div class="container">
+        <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="newLocalisation" method="get">
+            <div class="input-group contact-form mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text colorbtn">
+                        <a asp-area="Inventaire" style="text-decoration:none; color:white;" asp-controller="Mobilier" asp-action="Index">Retour aux mobiliers</a>
+                    </span>
+                </div>
+                <input type="text" class="form-control input-textt" name="nom" placeholder="Nom du local" aria-label="Amount (to the nearest dollar)">
+                <div class="input-group-append">
+                    <span class="input-group-text colorbtn"><input class="butonAjouter" type="submit" value="Ajouter" /></span>
+                </div>
+            </div>
+        </form>
+        <br />
         <h1 class="title">Nouveau mobilier</h1>
-        <div class="container">
+        <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" method="post">
             <div class="contact-form row">
 
                 <div class="form-field col-lg-12">
                     <input type="text" asp-for="Description" class="input-text">
-                    <label asp-for="Description" class="label"></label>
+                    <label asp-for="Description" class="label">Description <span asp-validation-for="Description" class="text-danger"></span></label>
                 </div>
 
                 <div class="form-field col-lg-6">
-                    <select class="form-control input-text" asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
+                    <select class="input-text" asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
                         <option value=""></option>
                     </select>
-                    <label asp-for="Etat" class="label"></label>
+                    <label asp-for="Etat" class="label">Etat <span asp-validation-for="Etat" class="text-danger"></span></label>
                 </div>
 
                 <div class="form-field col-lg-6">
-                    <select class="form-control input-text" asp-for="Localisation" asp-items="@ViewBag.Localisations">
+                    <select class="input-text" asp-for="Localisation" asp-items="@ViewBag.Localisations">
                         <option value=""></option>
                     </select>
-                    <label asp-for="Localisation" class="label"></label>
+                    <label class="label">Local <span asp-validation-for="Quantite" class="text-danger"></span></label>
                 </div>
 
 
                 <div class="form-field col-lg-6">
-                    <input type="text" class="input-text" asp-for="Quantite" placeholder="Saisissez un nombre">
-                    <label asp-for="Quantite" class="label"></label>
+                    <input type="text" class="input-text" asp-for="Quantite">
+                    <label asp-for="Quantite" class="label">Quantité <span asp-validation-for="Quantite" class="text-danger"></span></label>
+
                 </div>
 
                 <div class="form-field col-lg-6">
-                    <input type="submit" name="" class="submit-btn" value="Submity" id="">
+                    <input type="submit" name="" class="submit-btn" value="Enregistrer">
                 </div>
             </div>
-        </div>
-    </section>
-    <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Create" method="post">
+        </form>
+    </div>
+</section>
 
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label asp-for="Etat"></label>
-                <select class="form-control" asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
-                    <option value="">Selectionner...</option>
-                </select>
-                <span asp-validation-for="Etat" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-4">
-                <label asp-for="Localisation"></label>
-                <select class="form-control" asp-for="Localisation" asp-items="@ViewBag.Localisations">
-                    <option value="">Selectionner...</option>
-                </select>
-                <span asp-validation-for="Localisation" class="text-danger"></span>
-            </div>
-            <div class="form-group col-md-2">
-                <label asp-for="Quantite"></label>
-                <input type="text" class="form-control" asp-for="Quantite">
-                <span asp-validation-for="Quantite" class="text-danger"></span>
-            </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary text-center">Enregistrer</button>
-    </form>
