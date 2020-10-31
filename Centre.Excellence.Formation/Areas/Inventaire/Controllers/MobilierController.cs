@@ -50,7 +50,11 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
             var model = db.Mobiliers.AsNoTracking().ToList();
             return View(model);
         }
-
+        public IActionResult RapportMobilier()
+        {
+            var model = db.Mobiliers.AsNoTracking().ToList();
+            return View(model);
+        }
         public IActionResult Detail(string id)
         {
             Mobilier model = db.Mobiliers.Find(id);
