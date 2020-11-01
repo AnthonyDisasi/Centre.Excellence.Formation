@@ -1,53 +1,52 @@
 ﻿@model Mobilier
 
-<form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@Model.ID" method="post">
-    <table>
-        <tr>
-            <td>
-                <label asp-for="Description"></label>
-            </td>
-            <td>
-                <input asp-for="Description" />
-                <span asp-validation-for="Description" class="message"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label asp-for="Quantite"></label>
-            </td>
-            <td>
-                <input asp-for="Quantite" />
-                <span asp-validation-for="Quantite" class="mesaage"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label asp-for="Localisation"></label>
-            </td>
-            <td>
-                <select asp-for="Localisation" asp-items="@ViewBag.Localisations">
-                    <option value="">Selectionner</option>
-                </select>
-                <span asp-validation-for="Localisation" class="message"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label asp-for="Etat"></label>
-            </td>
-            <td>
-                <select asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
-                    <option value="">Selectionner</option>
-                </select>
-                <span asp-validation-for="Etat" class="message"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" value="Enregistrer" />
-            </td>
-        </tr>
-    </table>
-</form>
+@{
+    ViewData["Title"] = "Mobilier";
+}
 
-<a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Index">Retour à la liste des mobiliers</a>
+<section class="get_in_touch">
+    <div class="container">
+
+        <h1 class="title">Modifier mobilier</h1>
+
+        <blockquote class="blockquote text-center">
+            <a asp-area="Inventaire" asp-controller="Mobilier" class="btn btn-outline-primary" asp-action="Index">Retour aux mobiliers</a>
+        </blockquote>
+        <br /><br />
+
+        <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@Model.ID" method="post">
+            <div class="contact-form row">
+
+                <div class="form-field col-lg-12">
+                    <input type="text" asp-for="Description" class="input-text">
+                    <label asp-for="Description" class="label">Description <span asp-validation-for="Description" class="text-danger"></span></label>
+                </div>
+
+                <div class="form-field col-lg-6">
+                    <select class="input-text" asp-for="Etat" asp-items="Html.GetEnumSelectList<Etat>()">
+                        <option value=""></option>
+                    </select>
+                    <label asp-for="Etat" class="label">Etat <span asp-validation-for="Etat" class="text-danger"></span></label>
+                </div>
+
+                <div class="form-field col-lg-6">
+                    <select class="input-text" asp-for="Localisation" asp-items="@ViewBag.Localisations">
+                        <option value=""></option>
+                    </select>
+                    <label class="label">Local <span asp-validation-for="Quantite" class="text-danger"></span></label>
+                </div>
+
+
+                <div class="form-field col-lg-6">
+                    <input type="text" class="input-text" asp-for="Quantite">
+                    <label asp-for="Quantite" class="label">Quantité <span asp-validation-for="Quantite" class="text-danger"></span></label>
+
+                </div>
+
+                <div class="form-field col-lg-6">
+                    <input type="submit" name="" class="submit-btn" value="Enregistrer">
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
