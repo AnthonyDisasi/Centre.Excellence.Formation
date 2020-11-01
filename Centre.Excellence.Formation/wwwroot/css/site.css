@@ -32,10 +32,14 @@ body {
         }
 
         .wrappere .sidebare ul li {
-            padding: 15px;
+            padding: 10px;
             border-bottom: 1px solid rgba(250, 0, 0, 0.144);
             border-bottom: 1px solid rgba(235, 0, 0, 0.253);
         }
+
+            .wrappere .sidebare ul li:hover {
+                border-bottom: 2px solid #e0e4e8;
+            }
 
 .wrapper .sidebar ul li a {
     color: #bdb8d7;
@@ -47,8 +51,7 @@ body {
 }
 
     .wrappere .sidebare ul li:hover a {
-        color: #fff;
-        font-size: 18px;
+        color: #e0e4e8;
     }
 
 .wrappere .sidebare .fouter {
