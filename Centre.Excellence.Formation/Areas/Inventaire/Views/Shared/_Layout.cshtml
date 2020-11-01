@@ -19,64 +19,37 @@
     <link rel="stylesheet" href="~/css/form.css" />
 </head>
 <body>
-    <nav class="navbar navbar-dark fixed-top text-light bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.htm#">C.E Inventaire</a>
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="dashboard.htm#">Sign out</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="container-fluid" style="margin-top:30px;">
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-dark sidebar" id="cache">
-                <div class="sidebar-sticky">
+    <div class="wrappere">
+        <div class="sidebare">
+            <h1>Tableau</h1>
 
-                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <a class="d-flex align-items-center text-muted" href="dashboard.htm#">
-                            <span data-feather="plus-circle"></span>
-                            Accueil
-                        </a>
-                    </h6>
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a asp-area="Inventaire" class="nav-link text-light" asp-controller="Materiel" asp-action="Index">
-                                <span data-feather="file-text"></span>
-                                Materiel
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="Inventaire" class="nav-link text-light" asp-controller="Mobilier" asp-action="Index">
-                                <span data-feather="file-text"></span>
-                                Mobilier
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="Inventaire" class="nav-link text-light" asp-controller="Diagnostique" asp-action="NewDiag">
-                                <span data-feather="file-text"></span>
-                                Diagnostique
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-area="Inventaire" class="nav-link text-light" asp-controller="Local_Fourniture" asp-action="Index">
-                                <span data-feather="file-text"></span>
-                                Local & Fourniture
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="container">
-                <main role="main" class="pb-2">
-                    @RenderBody()
-                </main>
+            <ul>
+                <li>
+                    <a asp-area="Inventaire" class="nav-link text-light" asp-controller="Materiel" asp-action="Index">Materiel</a>
+                </li>
+                <li>
+                    <a asp-area="Inventaire" class="nav-link text-light" asp-controller="Mobilier" asp-action="Index">Mobilier</a>
+                </li>
+                <li>
+                    <a asp-area="Inventaire" class="nav-link text-light" asp-controller="Diagnostique" asp-action="NewDiag">Diagnostique</a>
+                </li>
+                <li>
+                    <a asp-area="Inventaire" class="nav-link text-light" asp-controller="Local_Fourniture" asp-action="Index">Local & Fourniture</a>
+                </li>
+            </ul>
+            <div class="fouter">
+                &copy; 2020 - C.E.I
             </div>
-            <footer class="border-top footer text-muted">
-                <div class="container">
-                    &copy; 2020 - Centre.Excellence.Formation - Inventaire
+        </div>
+        <div class="main_content">
+            <div class="headere">
+                Centre d'excellence - Inventaire
+            </div>
+            <div class="info">
+                <div>
+                    @RenderBody()
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
 

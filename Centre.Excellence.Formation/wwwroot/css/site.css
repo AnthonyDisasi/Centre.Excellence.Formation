@@ -1,63 +1,86 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-    a.navbar-brand {
-      white-space: normal;
-      text-align: center;
-      word-break: break-all;
-    }
-
-    /* Sticky footer styles
-    -------------------------------------------------- */
-    html {
-      font-size: 14px;
-    }
-    @media (min-width: 768px) {
-      html {
-        font-size: 16px;
-      }
-    }
-
-    .border-top {
-      border-top: 1px solid #e5e5e5;
-    }
-    .border-bottom {
-      border-bottom: 1px solid #e5e5e5;
-    }
-
-    .box-shadow {
-      box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-    }
-
-    button.accept-policy {
-      font-size: 1rem;
-      line-height: inherit;
-    }
-
-    /* Sticky footer styles
-    -------------------------------------------------- */
-    html {
-      position: relative;
-      min-height: 100%;
-    }
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+}
 
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    background: #92929279;
 }
-    .footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      white-space: nowrap;
-      /* Set the fixed height of the footer here */
-      height: 60px;
-      line-height: 60px; /* Vertically center the text there */
+
+.wrappere {
+    display: flex;
+    position: relative;
+}
+
+    .wrappere .sidebare {
+        position: fixed;
+        width: 200px;
+        height: 100%;
+        background: linear-gradient(to right, #5a00ad 0%, #ab00c2 100%);
+        padding: 30px 0;
+    }
+
+        .wrappere .sidebare h1 {
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .wrappere .sidebare ul li {
+            padding: 15px;
+            border-bottom: 1px solid rgba(250, 0, 0, 0.144);
+            border-bottom: 1px solid rgba(235, 0, 0, 0.253);
+        }
+
+.wrapper .sidebar ul li a {
+    color: #bdb8d7;
+    display: block;
+}
+
+.wrappere .sidebare ul li:hover {
+    background-color: #6f4b8393;
+}
+
+    .wrappere .sidebare ul li:hover a {
+        color: #fff;
+        font-size: 18px;
+    }
+
+.wrappere .sidebare .fouter {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: #fff;
+    font-size: 15px;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.wrappere .main_content {
+    width: 100%;
+    margin-left: 200px;
+}
+
+    .wrappere .main_content .headere {
+        padding: 20px;
+        background: #fff;
+        color: #3f0029;
+        border-bottom: 1px solid #e0e4e8;
+    }
+
+    .wrappere .main_content .info {
+        margin: 20px;
+        line-height: 25px;
     }
 
 .Centrer {
     max-width: 85%;
-    padding:30px;
+    padding: 30px;
     margin: auto;
     margin-top: 50px;
     position: relative;
