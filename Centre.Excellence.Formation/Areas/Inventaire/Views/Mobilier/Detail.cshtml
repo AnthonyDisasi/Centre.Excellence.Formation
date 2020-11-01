@@ -1,33 +1,57 @@
 ﻿@model Mobilier
+@{
+    ViewData["Title"] = "Mobilier";
+}
 
+<div class="Centrer">
+    <h3 class="text-beau">Detail du mobilier</h3>
     <br />
-    <h4>Detail sur le mobilier</h4>
-    <br />
-    <a asp-area="Inventaire" asp-controller="Mobilier" class="btn btn-outline-primary" asp-action="Index">Retour aux mobiliers</a>
-    <br />
-    <br />
+    <blockquote class="blockquote text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@Model.ID" class="btn btn-outline-info">Modifier</a>
+            <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Delete" asp-route-id="@Model.ID" class="btn btn-outline-danger">Supprimer</a>
+        </div>
+        <a asp-area="Inventaire" asp-controller="Mobilier" class="btn btn-outline-primary" style="margin-left: 20px;" asp-action="Index">Retour aux mobiliers</a>
 
-
-    <dl class="row">
-        <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.ID)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(m => Model.ID)</dd>
-
-        <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.Description)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(m => Model.Description)</dd>
-
-        <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.Quantite)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(m => Model.Quantite)</dd>
-
-        <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.Localisation)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(m => Model.Localisation)</dd>
-
-        <dt class="col-sm-3">@Html.DisplayNameFor(m => Model.Etat)</dt>
-        <dd class="col-sm-9">@Html.DisplayFor(m => Model.Etat)</dd>
-
-        <dt class="col-sm-3">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Update" asp-route-id="@Model.ID" class="btn btn-info">Modifier</a>
-                <a asp-area="Inventaire" asp-controller="Mobilier" asp-action="Delete" asp-route-id="@Model.ID" class="btn btn-danger">Supprimer</a>
+    </blockquote>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <strong>@Html.DisplayNameFor(m => Model.ID)</strong>
+</div>
+            <div class="col-10 text-truncate">
+                @Html.DisplayFor(m => Model.ID)
             </div>
-        </dt>
-    </dl>
+
+            <div class="col-2">
+                <strong>@Html.DisplayNameFor(m => Model.Description)</strong>
+</div>
+            <div class="col-10 card-text">
+                <p class="lead overflow-hidden">
+                    @Html.DisplayFor(m => Model.Description)
+                </p>
+            </div>
+
+            <div class="col-2">
+                <strong>@Html.DisplayNameFor(m => Model.Quantite)</strong>
+</div>
+            <div class="col-10">
+                @Html.DisplayFor(m => Model.Quantite)
+            </div>
+
+            <div class="col-2">
+                <strong>@Html.DisplayNameFor(m => Model.Localisation)</strong>
+</div>
+            <div class="col-10">
+                @Html.DisplayFor(m => Model.Localisation)
+            </div>
+
+            <div class="col-2 text-capitalize">
+                <strong>@Html.DisplayNameFor(m => Model.Etat)</strong>
+</div>
+            <div class="col-10">
+                @Html.DisplayFor(m => Model.Etat)
+            </div>
+        </div>
+    </div>
+</div>
