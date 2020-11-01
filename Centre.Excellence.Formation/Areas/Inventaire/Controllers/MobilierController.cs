@@ -35,7 +35,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         [HttpPost]
         public IActionResult Create(Mobilier model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 db.Mobiliers.Add(model);
                 db.SaveChanges();
@@ -72,7 +72,7 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
         public IActionResult Update(Mobilier model, string id)
         {
             model.ID = id;
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 db.Mobiliers.Update(model);
                 db.SaveChanges();
@@ -100,10 +100,19 @@ namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 
         public IActionResult newLocalisation(string nom)
         {
-            Localisation model = new Localisation { Nom = nom };
-            db.Localisations.Add(model);
-            db.SaveChanges();
-            return RedirectToAction("Create");
+            if (String.IsNullOrEmpty(nom))
+            {
+                ViewData["message"] = "La valeur ne peut être nulle";
+                return RedirectToAction("Create");
+            }
+            else
+            {
+                Localisation model = new Localisation { Nom = nom };
+                db.Localisations.Add(model);
+                db.SaveChanges();
+                ViewData["message"] = "Le nom du local";
+                return RedirectToAction("Create");
+            }
         }
     }
 }

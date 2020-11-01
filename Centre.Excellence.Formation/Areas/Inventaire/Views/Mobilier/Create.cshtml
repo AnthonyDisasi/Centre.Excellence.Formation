@@ -8,7 +8,7 @@
     <div class="container">
 
         <h1 class="title">Nouveau mobilier</h1>
-
+        <!---->
         <form asp-area="Inventaire" asp-controller="Mobilier" asp-action="newLocalisation" method="get">
             <div class="input-group contact-form mb-3">
                 <div class="input-group-prepend">
@@ -16,7 +16,7 @@
                         <a asp-area="Inventaire" style="text-decoration:none; color:white;" asp-controller="Mobilier" asp-action="Index">Retour aux mobiliers</a>
                     </span>
                 </div>
-                <input type="text" class="form-control input-textt" name="nom" placeholder="Nom du local" aria-label="Amount (to the nearest dollar)">
+                <input type="text" class="form-control input-textt" name="nom" value="@ViewData["message"]" aria-label="Amount (to the nearest dollar)">
                 <div class="input-group-append">
                     <span class="input-group-text colorbtn"><input class="butonAjouter" type="submit" value="Ajouter" /></span>
                 </div>
@@ -60,4 +60,4 @@
         </form>
     </div>
 </section>
-
+</script>
