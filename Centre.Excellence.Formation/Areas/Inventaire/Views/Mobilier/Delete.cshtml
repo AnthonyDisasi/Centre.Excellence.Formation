@@ -8,23 +8,44 @@
         <h4 class="text-danger" style="margin:15px;">Etes vous sûr de supprimer ce mobilier!</h4>
 
     </blockquote>
-    <dl class="row Centrer_elemet">
-        <dt class="col-sm-4">@Html.DisplayNameFor(m => Model.ID)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(m => Model.ID)</dd>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                @Html.DisplayNameFor(m => Model.ID)
+            </div>
+            <div class="col-10 text-truncate">
+                @Html.DisplayFor(m => Model.ID)
+            </div>
 
-        <dt class="col-sm-4">@Html.DisplayNameFor(m => Model.Description)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(m => Model.Description)</dd>
+            <div class="col-2">
+                @Html.DisplayNameFor(m => Model.Description)
+            </div>
+            <div class="col-10 text-truncate">
+                @Html.DisplayFor(m => Model.Description)
+            </div>
 
-        <dt class="col-sm-4">@Html.DisplayNameFor(m => Model.Quantite)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(m => Model.Quantite)</dd>
+            <div class="col-2">
+                @Html.DisplayNameFor(m => Model.Quantite)
+            </div>
+            <div class="col-10">
+                @Html.DisplayFor(m => Model.Quantite)
+            </div>
 
-        <dt class="col-sm-4">@Html.DisplayNameFor(m => Model.Localisation)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(m => Model.Localisation)</dd>
+            <div class="col-2">
+                @Html.DisplayNameFor(m => Model.Localisation)
+            </div>
+            <div class="col-10">
+                @Html.DisplayFor(m => Model.Localisation)
+            </div>
 
-        <dt class="col-sm-4">@Html.DisplayNameFor(m => Model.Etat)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(m => Model.Etat)</dd>
-    </dl>
-
+            <div class="col-2 text-capitalize">
+                @Html.DisplayNameFor(m => Model.Etat)
+            </div>
+            <div class="col-10">
+                @Html.DisplayFor(m => Model.Etat)
+            </div>
+        </div>
+    </div>
     <form asp-area="Inventaire" class="blockquote text-center" asp-controller="Mobilier" asp-action="Delete" asp-route-idmob="@Model.ID" method="post">
         <input type="submit" class="btn btn-danger" value="Supprimer" />
     </form>
