@@ -1,0 +1,13 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Centre.Excellence.Formation.Data
+{
+    public class DbAuthentification : DbContext
+    {
+        public DbAuthentification(DbContextOptions<DbAuthentification> options) : base(options) { }
+    }
+}

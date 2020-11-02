@@ -1,5 +1,6 @@
 ﻿using Centre.Excellence.Formation.Areas.FormationPlaning.Data;
 using Centre.Excellence.Formation.Areas.Inventaire.Data;
+using Centre.Excellence.Formation.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,7 @@ namespace Centre.Excellence.Formation
 
             services.AddDbContext<DCInventaire>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBInvenataire")));
             services.AddDbContext<DCFormation>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBFormateur")));
+            services.AddDbContext<DbAuthentification>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBUser")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
