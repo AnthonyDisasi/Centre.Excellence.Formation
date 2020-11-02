@@ -3,14 +3,16 @@ using Centre.Excellence.Formation.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Centre.Excellence.Formation.Migrations.DbAuthentificationMigrations
 {
     [DbContext(typeof(DbAuthentification))]
-    partial class DbAuthentificationModelSnapshot : ModelSnapshot
+    [Migration("20201102132902__init_DBUser_1")]
+    partial class _init_DBUser_1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
