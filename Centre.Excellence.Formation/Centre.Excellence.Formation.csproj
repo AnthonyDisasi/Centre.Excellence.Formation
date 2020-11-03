@@ -15,6 +15,7 @@
   <ItemGroup>
     <Folder Include="Areas\Inventaire\Data\" />
     <Folder Include="Areas\Inventaire\Models\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

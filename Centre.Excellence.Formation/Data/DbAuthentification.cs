@@ -11,8 +11,6 @@ namespace Centre.Excellence.Formation.Data
     {
         public DbAuthentification(DbContextOptions<DbAuthentification> options) : base(options) { }
 
-        public virtual DbSet<Personne> Personnes { get; set; }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
