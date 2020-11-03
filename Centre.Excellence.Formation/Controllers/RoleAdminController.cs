@@ -73,5 +73,23 @@ namespace Centre.Excellence.Formation.Controllers
                 ModelState.AddModelError("", error.Description);
             }
         }
+
+        public async Task<IActionResult> Edit(string id)
+        {
+            IdentityRole role = await roleManager.FindByIdAsync(id);
+            List<ApplicationUSer> members = new List<ApplicationUSer>();
+            List<ApplicationUSer> nonMembers = new List<ApplicationUSer>();
+            foreach (ApplicationUSer user in userManager.Users)
+            {
+                var list = await userManager.IsInRoleAsync(user, role.Name) ? members : nonMembers;
+                list.Add(user);
+            }
+            return View(new RoleEditModel
+            {
+                Role = role,
+                Members = members,
+                NonMembers = nonMembers
+            });
+        }
     }
 }
