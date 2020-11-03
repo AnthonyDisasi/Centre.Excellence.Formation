@@ -44,6 +44,16 @@
         <div class="main_content">
             <div class="headere">
                 Centre d'excellence - Inventaire
+
+                @if (User?.Identity?.IsAuthenticated ?? false)
+                {
+                    <ul class="navbar-nav px-3">
+                        <li class="nav-item text-nowrap">
+                            <p>@User.Identity.Name</p>
+                            <a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Deconnexion</a>
+                        </li>
+                    </ul>
+                }
             </div>
             <div class="info">
                 <div>
