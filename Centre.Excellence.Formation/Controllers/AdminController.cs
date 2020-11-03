@@ -26,9 +26,6 @@ namespace Centre.Excellence.Formation.Controllers
             passwordHasher = passwordHash;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public ViewResult Index() => View(UserMana.Users);
     }
 }
