@@ -27,5 +27,28 @@ namespace Centre.Excellence.Formation.Controllers
             ViewBag.returnUrl = returnUrl;
             return View();
         }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginModel details, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                ApplicationUSer user = await userManager.FindByEmailAsync(details.Email);
+                if (user != null)
+                {
+                    await signInManager.SignOutAsync();
+                    Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(user, details.Password, false, false);
+                    if (result.Succeeded)
+                    {
+                        return Redirect(returnUrl ?? "/");
+                    }
+                }
+                ModelState.AddModelError(nameof(LoginModel.Email), "Invalid user or password");
+            }
+
+            return View(details);
+        }
     }
 }
