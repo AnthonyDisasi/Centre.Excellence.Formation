@@ -42,7 +42,7 @@ namespace Centre.Excellence.Formation.Controllers
                     Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(user, details.Password, false, false);
                     if (result.Succeeded)
                     {
-                        return Redirect(returnUrl ?? "/");
+                        return Redirect(returnUrl ?? "AccueilCI");
                     }
                 }
                 ModelState.AddModelError(nameof(LoginModel.Email), "Invalid user or password");
@@ -61,7 +61,7 @@ namespace Centre.Excellence.Formation.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction("AccueilCI");
+            return RedirectToAction("Login");
         }
 
         public IActionResult AccueilCI()

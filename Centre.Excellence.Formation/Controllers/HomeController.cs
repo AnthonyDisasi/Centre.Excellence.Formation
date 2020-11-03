@@ -12,7 +12,7 @@ namespace Centre.Excellence.Formation.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("AccueilCI", "Account");
         }
     }
 }

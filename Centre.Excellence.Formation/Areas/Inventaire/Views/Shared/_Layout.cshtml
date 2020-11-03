@@ -42,17 +42,19 @@
             </div>
         </div>
         <div class="main_content">
-            <div class="headere">
-                Centre d'excellence - Inventaire
+            <div class="headere row justify-content-between">
+                <div class="col-4">
+                    Centre d'excellence - Inventaire
+                </div>
 
                 @if (User?.Identity?.IsAuthenticated ?? false)
                 {
-                    <ul class="navbar-nav px-3">
-                        <li class="nav-item text-nowrap">
-                            <p>@User.Identity.Name</p>
-                            <a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Deconnexion</a>
-                        </li>
-                    </ul>
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <div class="p-2 bd-highlight">
+                    <a asp-controller="Account" class="btn btn-outline-danger" asp-action="Logout">Deconnexion</a>
+                </div>
+                <div class="p-2 bd-highlight"><a>@User.Identity.Name | </a></div>
+            </div>
                 }
             </div>
             <div class="info">

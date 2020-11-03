@@ -70,25 +70,26 @@ body {
 }
 
     .wrappere .main_content .headere {
-        padding: 20px;
+        padding: 10px;
         background: #fff;
         color: #3f0029;
         border-bottom: 1px solid #e0e4e8;
+        height:50px;
     }
 
-    .wrappere .main_content .info {
-        margin: 20px;
-        line-height: 25px;
-    }
+        .wrappere .main_content .info {
+            margin: 20px;
+            line-height: 25px;
+        }
 
-.Centrer {
-    max-width: 85%;
-    padding: 30px;
-    margin: auto;
-    margin-top: 50px;
-    position: relative;
-    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
-}
+    .Centrer {
+        max-width: 85%;
+        padding: 30px;
+        margin: auto;
+        margin-top: 50px;
+        position: relative;
+        box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    }
 
 .text-beau {
     text-transform: uppercase;
