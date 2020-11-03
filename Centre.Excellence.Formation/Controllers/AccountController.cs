@@ -63,5 +63,10 @@ namespace Centre.Excellence.Formation.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult AccueilCI()
+        {
+            return View();
+        }
     }
 }
