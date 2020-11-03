@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Centre.Excellence.Formation.Areas.Inventaire.Data;
 using Centre.Excellence.Formation.Areas.Inventaire.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 {
     [Area("Inventaire")]
+    [Authorize(Roles = "Maintenancier")]
     public class MaterielController : Controller
     {
         private readonly DCInventaire db;

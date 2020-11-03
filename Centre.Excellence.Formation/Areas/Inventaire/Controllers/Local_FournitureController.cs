@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Centre.Excellence.Formation.Areas.Inventaire.Controllers
 {
     [Area("Inventaire")]
+    [Authorize(Roles = "Maintenancier")]
     public class Local_FournitureController : Controller
     {
         private readonly DCInventaire db;
