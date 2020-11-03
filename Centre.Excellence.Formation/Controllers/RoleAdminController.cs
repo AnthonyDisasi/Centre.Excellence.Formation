@@ -19,9 +19,6 @@ namespace Centre.Excellence.Formation.Controllers
             userManager = userMrg;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public ViewResult Index() => View(roleManager.Roles);
     }
 }
