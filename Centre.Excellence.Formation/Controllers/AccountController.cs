@@ -50,5 +50,11 @@ namespace Centre.Excellence.Formation.Controllers
 
             return View(details);
         }
+
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }
