@@ -56,5 +56,12 @@ namespace Centre.Excellence.Formation.Controllers
         {
             return View();
         }
+
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
