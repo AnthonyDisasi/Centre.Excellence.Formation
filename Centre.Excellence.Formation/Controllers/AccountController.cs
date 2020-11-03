@@ -13,9 +13,11 @@ namespace Centre.Excellence.Formation.Controllers
         private UserManager<ApplicationUSer> userManager;
         private SignInManager<ApplicationUSer> signInManager;
 
-        public IActionResult Index()
+        public AccountController(UserManager<ApplicationUSer> userMgr,
+        SignInManager<ApplicationUSer> signinMgr)
         {
-            return View();
+            userManager = userMgr;
+            signInManager = signinMgr;
         }
     }
 }
