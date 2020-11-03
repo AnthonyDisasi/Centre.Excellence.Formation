@@ -13,6 +13,12 @@ namespace Centre.Excellence.Formation.Controllers
         private RoleManager<IdentityRole> roleManager;
         private UserManager<ApplicationUSer> userManager;
 
+        public RoleAdminController(RoleManager<IdentityRole> _roleManager, UserManager<ApplicationUSer> userMrg)
+        {
+            roleManager = _roleManager; ;
+            userManager = userMrg;
+        }
+
         public IActionResult Index()
         {
             return View();
