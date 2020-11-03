@@ -20,5 +20,7 @@ namespace Centre.Excellence.Formation.Controllers
         }
 
         public ViewResult Index() => View(roleManager.Roles);
+
+        public IActionResult Create() => View();
     }
 }
