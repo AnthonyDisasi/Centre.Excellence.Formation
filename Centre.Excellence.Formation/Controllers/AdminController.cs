@@ -56,5 +56,28 @@ namespace Centre.Excellence.Formation.Controllers
             }
             return View(model);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+            ApplicationUSer user = await UserMana.FindByIdAsync(id);
+            if (user != null)
+            {
+                IdentityResult result = await UserMana.DeleteAsync(user);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    AddErrorsFromResult(result);
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Error Not Found");
+            }
+            return RedirectToAction("Index", UserMana.Users);
+        }
     }
 }
