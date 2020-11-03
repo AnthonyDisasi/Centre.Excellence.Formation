@@ -27,5 +27,7 @@ namespace Centre.Excellence.Formation.Controllers
         }
 
         public ViewResult Index() => View(UserMana.Users);
+
+        public ViewResult Create() => View();
     }
 }
