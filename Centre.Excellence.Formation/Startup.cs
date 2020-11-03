@@ -36,12 +36,13 @@ namespace Centre.Excellence.Formation
             services.AddDbContext<DCInventaire>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBInvenataire")));
             services.AddDbContext<DCFormation>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBFormateur")));
             services.AddDbContext<DbAuthentification>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBUser")));
-            //services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>();
+
             services.AddTransient<IPasswordValidator<ApplicationUSer>, CustomPasswordValidator>();
 
             services.AddTransient<IUserValidator<ApplicationUSer>, CustomUserValidator>();
-
+           
             services.AddIdentity<ApplicationUSer, IdentityRole>(opts => {
+
                 opts.User.RequireUniqueEmail = true;
                 //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
                 opts.Password.RequiredLength = 6;

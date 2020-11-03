@@ -61,7 +61,7 @@ namespace Centre.Excellence.Formation.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("AccueilCI");
         }
 
         public IActionResult AccueilCI()
