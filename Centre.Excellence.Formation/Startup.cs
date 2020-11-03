@@ -1,9 +1,12 @@
 ﻿using Centre.Excellence.Formation.Areas.FormationPlaning.Data;
 using Centre.Excellence.Formation.Areas.Inventaire.Data;
 using Centre.Excellence.Formation.Data;
+using Centre.Excellence.Formation.Infrastructure;
+using Centre.Excellence.Formation.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -33,6 +36,20 @@ namespace Centre.Excellence.Formation
             services.AddDbContext<DCInventaire>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBInvenataire")));
             services.AddDbContext<DCFormation>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBFormateur")));
             services.AddDbContext<DbAuthentification>(options => options.UseSqlServer(this.Configuration.GetConnectionString("DBUser")));
+            //services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>();
+            services.AddTransient<IPasswordValidator<ApplicationUSer>, CustomPasswordValidator>();
+
+            services.AddTransient<IUserValidator<ApplicationUSer>, CustomUserValidator>();
+
+            services.AddIdentity<ApplicationUSer, IdentityRole>(opts => {
+                opts.User.RequireUniqueEmail = true;
+                //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireDigit = false;
+            }).AddEntityFrameworkStores<DbAuthentification>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -53,6 +70,7 @@ namespace Centre.Excellence.Formation
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
