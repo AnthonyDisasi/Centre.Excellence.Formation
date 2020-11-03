@@ -15,6 +15,17 @@ namespace Centre.Excellence.Formation.Controllers
         private IPasswordValidator<ApplicationUSer> passwordValidator;
         private IPasswordHasher<ApplicationUSer> passwordHasher;
 
+        public AdminController(UserManager<ApplicationUSer> usrMgr,
+        IUserValidator<ApplicationUSer> userValid,
+        IPasswordValidator<ApplicationUSer> passValid,
+        IPasswordHasher<ApplicationUSer> passwordHash)
+        {
+            UserMana = usrMgr;
+            userValidator = userValid;
+            passwordValidator = passValid;
+            passwordHasher = passwordHash;
+        }
+
         public IActionResult Index()
         {
             return View();
