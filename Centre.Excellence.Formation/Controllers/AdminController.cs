@@ -87,5 +87,18 @@ namespace Centre.Excellence.Formation.Controllers
                 ModelState.AddModelError("", error.Description);
             }
         }
+
+        public async Task<IActionResult> Edit(string id)
+        {
+            ApplicationUSer user = await UserMana.FindByIdAsync(id);
+            if (user != null)
+            {
+                return View(user);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
