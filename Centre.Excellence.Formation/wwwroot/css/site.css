@@ -9,6 +9,8 @@
 
 body {
     background: #fff;
+    background-image: url("../img/back.jpg");
+    background-size:cover;
 }
 
 .wrappere {
@@ -32,22 +34,22 @@ body {
         padding: 30px 0;
     }
 
-        .wrappere .sidebare h1 {
-            color: #fff;
-            text-transform: uppercase;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    .wrappere .sidebare h1 {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-        .wrappere .sidebare ul li {
-            padding: 10px;
-            border-bottom: 1px solid rgba(250, 0, 0, 0.144);
-            border-bottom: 1px solid rgba(235, 0, 0, 0.253);
-        }
+    .wrappere .sidebare ul li {
+        padding: 10px;
+        border-bottom: 1px solid rgba(250, 0, 0, 0.144);
+        border-bottom: 1px solid rgba(235, 0, 0, 0.253);
+    }
 
-            .wrappere .sidebare ul li:hover {
-                border-bottom: 2px solid #e0e4e8;
-            }
+        .wrappere .sidebare ul li:hover {
+            border-bottom: 2px solid #e0e4e8;
+        }
 
 .wrapper .sidebar ul li a {
     color: #bdb8d7;
@@ -84,19 +86,20 @@ body {
         border-bottom: 1px solid #e0e4e8;
     }
 
-        .wrappere .main_content .info {
-            margin: 20px;
-            line-height: 25px;
-        }
-
-    .Centrer {
-        max-width: 85%;
-        padding: 30px;
-        margin: auto;
-        margin-top: 50px;
-        position: relative;
-        box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    .wrappere .main_content .info {
+        margin: 20px;
+        line-height: 25px;
     }
+
+.Centrer {
+    max-width: 85%;
+    padding: 30px;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.959);
+}
 
 .text-beau {
     text-transform: uppercase;
